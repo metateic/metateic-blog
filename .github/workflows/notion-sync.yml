@@ -1,0 +1,55 @@
+name: Sync Notion Posts to Markdown
+
+on:
+  schedule:
+    - cron: "0 0 * * *"    # Runs daily at midnight (adjust as needed)
+  workflow_dispatch:       # Allow manual trigger from the Actions tab
+jobs:
+  sync-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Export new posts from Notion
+        uses: victornpb/notion-jam@v0.0.10
+        with:
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
+          NOTION_DATABASE: "${{ secrets.NOTION_DATABASE_ID }}"
+          FILTER_PROP: "Status"
+          FILTER_VALUES: "Ready"
+          CONVERT_PROP_CASE: "snake"
+          ARTICLE_PATH: "_posts/{slug}.md"
+          ASSETS_PATH: "media"
+          SKIP_DOWNLOADED_IMAGES: true
+          DOWNLOAD_FRONTMATTER_IMAGES: true
+
+      # (Optional) Add a step to generate a summary via AI if no summary is provided
+
+      - name: Extract post title from front matter
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHANGED=$( (git ls-files -o --exclude-standard -- '_posts/*.md'; git ls-files -m -- '_posts/*.md') | sort -u )
+          FILE=$(echo "$CHANGED" | head -n1 || true)
+          if [ -n "${FILE:-}" ]; then
+            TITLE=$(awk 'BEGIN{in=0} /^---/{in++; next} in==1 && $1=="title:"{ $1=""; sub(/^[ \t]+/, ""); print; exit }' "$FILE" | sed 's/^"\(.*\)"$/\1/; s/^'"'"'\(.*\)'"'"'$/\1/')
+            if [ -z "$TITLE" ]; then
+              BASENAME=$(basename "$FILE" .md)
+              TITLE=$(echo "$BASENAME" | sed -E 's/^[0-9]{4}-[0-9]{2}-[0-9]{2}-//' | tr '-' ' ')
+            fi
+            echo "file=$FILE" >> "$GITHUB_OUTPUT"
+            echo "title=$TITLE" >> "$GITHUB_OUTPUT"
+          else
+            echo "file=" >> "$GITHUB_OUTPUT"
+            echo "title=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request for new post
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: "new-post-${{ github.run_id }}"  # unique branch name for PR
+          title: "New Blog Post: ${{ steps.meta.outputs.title }}"
+          body: "<Post Summary or AI-generated summary here>"
+          commit-message: "Add new blog post: ${{ steps.meta.outputs.title }}"
