@@ -3,10 +3,10 @@
   <channel>
     <title>Metateic Blog</title>
     <description>Exploring technology, innovation, and the future of computing.</description>
-    <link>http://localhost:4001/</link>
-    <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Aug 2025 11:27:54 -0400</pubDate>
-    <lastBuildDate>Fri, 29 Aug 2025 11:27:54 -0400</lastBuildDate>
+    <link>http://localhost:4003/</link>
+    <atom:link href="http://localhost:4003/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 29 Aug 2025 11:38:18 -0400</pubDate>
+    <lastBuildDate>Fri, 29 Aug 2025 11:38:18 -0400</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
     
       <item>
@@ -208,8 +208,8 @@
 &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; #AI #MachineLearning #Trends #2024 #Technology #Innovation #Future&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 Jan 2024 00:00:00 -0500</pubDate>
-        <link>http://localhost:4001/ai-trends-2024/</link>
-        <guid isPermaLink="true">http://localhost:4001/ai-trends-2024/</guid>
+        <link>http://localhost:4003/ai-trends-2024/</link>
+        <guid isPermaLink="true">http://localhost:4003/ai-trends-2024/</guid>
         
         <category>ai</category>
         
@@ -229,7 +229,7 @@
       </item>
     
       <item>
-        <title>Welcome to Metateic - Exploring the Future of Technology</title>
+        <title>Accumulated experience of social living</title>
         <description>&lt;h1 id=&quot;-welcome-to-metateic&quot;&gt;🚀 Welcome to Metateic!&lt;/h1&gt;
 
 &lt;p&gt;Welcome to the &lt;strong&gt;Metateic Blog&lt;/strong&gt; - your gateway to the future of technology and innovation. We’re thrilled to have you here as we embark on an exciting journey exploring the most fascinating developments in the tech world.&lt;/p&gt;
@@ -314,21 +314,13 @@
 &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; #Welcome #Technology #Innovation #Future #Metateic&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Jan 2024 00:00:00 -0500</pubDate>
-        <link>http://localhost:4001/welcome-to-metateic/</link>
-        <guid isPermaLink="true">http://localhost:4001/welcome-to-metateic/</guid>
-        
-        <category>welcome</category>
-        
-        <category>technology</category>
-        
-        <category>innovation</category>
-        
-        <category>future</category>
+        <link>http://localhost:4003/welcome-to-metateic/</link>
+        <guid isPermaLink="true">http://localhost:4003/welcome-to-metateic/</guid>
         
         
-        <category>Technology</category>
+        <category>Jekyll</category>
         
-        <category>Innovation</category>
+        <category>tutorial</category>
         
       </item>
     

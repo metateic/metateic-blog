@@ -1,15 +1,12 @@
 ---
 layout: post
-title: "Welcome to Metateic - Exploring the Future of Technology"
-date: 2024-01-15
-author: "Metateic"
-categories: [Technology, Innovation]
-tags: [welcome, technology, innovation, future]
-excerpt: "Welcome to the Metateic blog! We're excited to share our journey exploring cutting-edge technology and innovation with you."
-featured: true
+title: "Accumulated experience of social living"
+author: liam  # This references the 'liam' author from _config.yml
+categories: [ Jekyll, tutorial ]
+image: assets/images/15.jpg
 ---
 
-# 🚀 Welcome to Metateic!
+# 🚀 Welcome to Metateic!   
 
 Welcome to the **Metateic Blog** - your gateway to the future of technology and innovation. We're thrilled to have you here as we embark on an exciting journey exploring the most fascinating developments in the tech world.
 
