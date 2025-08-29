@@ -57,51 +57,77 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, a {
 
 /* Dark mode toggle button */
 #darkModeToggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 14px;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-    border: 1px solid #dee2e6;
-    background-color: #f8f9fa;
-    color: #333333;
+    padding: 0;
+    margin: 0 10px;
+    display: block;
 }
 
+#darkModeToggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Add sun/moon icons to the switch */
+#darkModeToggle::after {
+    content: '☀️';
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+/* Dark mode switch styling */
+[data-theme="dark"] #darkModeToggle {
+    background-color: #58a6ff;
+}
+
+[data-theme="dark"] #darkModeToggle::before {
+    transform: translateX(30px);
+}
+
+[data-theme="dark"] #darkModeToggle::after {
+    content: '🌙';
+    left: 38px;
+    opacity: 1;
+}
+
+/* Hover effects */
 #darkModeToggle:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Dark mode toggle button specific styling */
-[data-theme="dark"] #darkModeToggle {
-    background-color: #2d2d2d;
-    border-color: #404040;
-    color: #ffffff;
-}
-
-[data-theme="dark"] #darkModeToggle:hover {
-    background-color: #404040;
-    border-color: #666666;
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+#darkModeToggle:hover::before {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Ensure the toggle button aligns with other nav items */
 .navbar-nav .nav-item:has(#darkModeToggle) {
-    display: flex;
     align-items: center;
 }
 
 /* Better integration with navigation */
 .navbar-nav .nav-item {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 #darkModeToggle {
@@ -109,18 +135,76 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, a {
     line-height: 1;
 }
 
-/* Icon styling */
-#darkModeToggle .fas {
-    font-size: 16px;
-    line-height: 1;
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #darkModeToggle {
         margin: 5px 0;
         width: 100%;
-        justify-content: center;
+        justify-content: left;
+    }
+    
+    /* Mobile navbar improvements */
+   
+    
+    /* Mobile toggle button improvements */
+    #darkModeToggle {
+        width: 60px;
+        height: 32px;
+        margin: 10px 0;
+        border-radius: 16px;
+    }
+    
+    #darkModeToggle::before {
+        width: 28px;
+        height: 28px;
+        top: 2px;
+        left: 2px;
+    }
+    
+    [data-theme="dark"] #darkModeToggle::before {
+        transform: translateX(28px);
+    }
+    
+    #darkModeToggle::after {
+        font-size: 14px;
+        left: 8px;
+    }
+    
+    [data-theme="dark"] #darkModeToggle::after {
+        left: 36px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+
+    
+    #darkModeToggle {
+        width: 50px;
+        height: 28px;
+        border-radius: 14px;
+    }
+    
+    #darkModeToggle::before {
+        width: 24px;
+        height: 24px;
+        top: 2px;
+        left: 2px;
+    }
+    
+    [data-theme="dark"] #darkModeToggle::before {
+        transform: translateX(22px);
+    }
+    
+    #darkModeToggle::after {
+        font-size: 12px;
+        left: 6px;
+    }
+    
+    [data-theme="dark"] #darkModeToggle::after {
+        left: 28px;
     }
 }
 
@@ -551,10 +635,9 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, a {
 [data-theme="dark"] #darkModeToggle:hover .fas {
     color: var(--text-primary);
 }
-
 /* Search box styling */
 [data-theme="dark"] .search-form input[type="text"] {
-    background-color: var(--bg-secondary);
+    background-color: white;
     border-color: var(--border-color);
     color: var(--text-primary);
 }
@@ -562,6 +645,31 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, a {
 [data-theme="dark"] .search-form input[type="text"]:focus {
     border-color: var(--link-color);
     box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+/* Mobile search container alignment */
+@media (max-width: 768px) {
+    .search-container {
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .search-form {
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    .search-form input[type="text"] {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+    }
 }
 
 [data-theme="dark"] .search-form button {
@@ -574,3 +682,4 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, a {
     background-color: var(--link-hover);
     border-color: var(--link-hover);
 }
+
