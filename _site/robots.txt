@@ -1,1 +1,1 @@
-Sitemap: https://blog.metateic.ca/sitemap.xml
+Sitemap: http://localhost:4007/sitemap.xml
