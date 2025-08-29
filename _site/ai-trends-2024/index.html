@@ -79,6 +79,22 @@
                 <a class="nav-link" href="/about">About</a>
                 </li>
 
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
+                </li>
+
                 <script src="/assets/js/lunr.js"></script>
 
 
@@ -133,14 +149,74 @@
 <div class="container">
     <div class="row">
 
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            <div class="share sticky-top sticky-top-offset">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Top AI Trends to Watch in 2024 - A Comprehensive Guide&url=http://localhost:4002/ai-trends-2024/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4002/ai-trends-2024/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4002/ai-trends-2024/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+    <div class="sep">
+    </div>
+    <ul>
+        <li>
+        <a class="small smoothscroll" href="#disqus_thread"></a>
+        </li>
+    </ul>
+    
+</div>
+
+        </div>
+
         <!-- Post -->
-        <div class="col-md-12">
+        
+
+        <div class="col-md-9 flex-first flex-md-unordered">
             <div class="mainheading">
+
+                <!-- Author Box -->
+                
+                <div class="row post-top-meta">
+                    <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
+                        
+                        <img class="author-thumb" src="https://www.gravatar.com/avatar/?s=250&d=mm&r=x" alt="">
+                        
+                    </div>
+                    <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
+                        <a target="_blank" class="link-dark" href=""></a><a target="_blank" href="" class="btn follow">Follow</a>
+                        <span class="author-description"></span>
+                    </div>
+                </div>
+                
 
                 <!-- Post Title -->
                 <h1 class="posttitle">Top AI Trends to Watch in 2024 - A Comprehensive Guide</h1>
 
             </div>
+
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            
+            <!-- End Adsense -->
 
             <!-- Post Featured Image -->
             
@@ -148,6 +224,9 @@
 
             <!-- Post Content -->
             <div class="article-post">
+                <!-- Toc if any -->
+                
+                <!-- End Toc -->
                 <h1 id="-top-ai-trends-to-watch-in-2024">🤖 Top AI Trends to Watch in 2024</h1>
 
 <p>As we dive into 2024, the artificial intelligence landscape is evolving at an unprecedented pace. From breakthrough innovations to practical applications, AI is transforming every industry. Let’s explore the most significant trends that will define this year and beyond.</p>
@@ -346,6 +425,9 @@
 
             </div>
 
+            <!-- Rating -->
+            
+
             <!-- Post Date -->
             <p>
             <small>
@@ -419,6 +501,39 @@
 </div>
 <!-- End Article
 ================================================== -->
+
+<!-- Begin Comments
+================================================== -->
+
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'demowebsite'; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+            </div>
+        </div>
+    </div>
+
+<!--End Comments
+================================================== -->
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
 </div>
 
 
