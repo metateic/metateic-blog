@@ -6,6 +6,7 @@ author: "Metateic"
 categories: [Technology, Innovation]
 tags: [welcome, technology, innovation, future]
 excerpt: "Welcome to the Metateic blog! We're excited to share our journey exploring cutting-edge technology and innovation with you."
+featured: true
 ---
 
 # 🚀 Welcome to Metateic!
