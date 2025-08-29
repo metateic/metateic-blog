@@ -16,6 +16,8 @@
 
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 
+<link href="{{ site.baseurl }}/assets/css/dark-mode.css" rel="stylesheet">
+
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 </head>
@@ -74,6 +76,13 @@ ga('send', 'pageview');
                 <li class="nav-item">
                 <a class="nav-link" href="https://metateic.com">About</a>
                 </li>       
+
+                <!-- Dark Mode Toggle -->
+                <li class="nav-item d-flex align-items-center">
+                    <button id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon" id="darkModeIcon"></i>
+                    </button>
+                </li>
 
                 {% include search-lunr.html %}
 
@@ -161,6 +170,8 @@ ga('send', 'pageview');
 {% endif %}
 
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+<script src="{{ site.baseurl }}/assets/js/dark-mode.js"></script>
 
 {% if page.layout == 'post' %}
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>

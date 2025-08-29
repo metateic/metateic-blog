@@ -1,0 +1,576 @@
+/* Dark Mode Styles */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #dee2e6;
+    --card-bg: #ffffff;
+    --navbar-bg: #ffffff;
+    --link-color: #007bff;
+    --link-hover: #0056b3;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --border-color: #30363d;
+    --card-bg: #161b22;
+    --navbar-bg: #0d1117;
+    --link-color: #58a6ff;
+    --link-hover: #79c0ff;
+}
+
+/* Apply CSS variables */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-primary) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--link-color) !important;
+}
+
+/* Ensure all text elements inherit the theme colors */
+h1, h2, h3, h4, h5, h6, p, span, div, li, a {
+    color: inherit;
+}
+
+
+
+/* Dark mode toggle button */
+#darkModeToggle {
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Dark mode toggle button specific styling */
+[data-theme="dark"] #darkModeToggle {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+[data-theme="dark"] #darkModeToggle:hover {
+    background-color: #404040;
+    border-color: #666666;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Ensure the toggle button aligns with other nav items */
+.navbar-nav .nav-item:has(#darkModeToggle) {
+    display: flex;
+    align-items: center;
+}
+
+/* Better integration with navigation */
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+#darkModeToggle {
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* Icon styling */
+#darkModeToggle .fas {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #darkModeToggle {
+        margin: 5px 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Button styling for dark mode */
+[data-theme="dark"] .btn {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn:hover {
+    background-color: var(--border-color);
+    border-color: var(--text-secondary);
+}
+
+[data-theme="dark"] .btn-primary {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
+}
+
+[data-theme="dark"] .btn-outline-secondary {
+    background-color: transparent;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Preserve original button styles for specific buttons */
+[data-theme="dark"] .btn.follow {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn.follow:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+}
+
+/* Form elements */
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="search"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] input[type="email"]:focus,
+[data-theme="dark"] input[type="search"]:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Post-specific dark mode styles */
+[data-theme="dark"] .article-post {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post h1,
+[data-theme="dark"] .article-post h2,
+[data-theme="dark"] .article-post h3,
+[data-theme="dark"] .article-post h4,
+[data-theme="dark"] .article-post h5,
+[data-theme="dark"] .article-post h6 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post p {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post ul,
+[data-theme="dark"] .article-post ol {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post li {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post blockquote {
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--link-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post code {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .article-post pre {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .article-post a {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] .article-post a:hover {
+    color: var(--link-hover);
+}
+
+/* Post metadata dark mode */
+[data-theme="dark"] .post-date {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .post-categories,
+[data-theme="dark"] .post-tags {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .post-categories a,
+[data-theme="dark"] .post-tags a {
+    color: var(--link-color);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .post-categories a:hover,
+[data-theme="dark"] .post-tags a:hover {
+    background-color: var(--link-color);
+    color: var(--bg-primary);
+}
+
+/* Author box dark mode */
+
+[data-theme="dark"] .author-description {
+    color: var(--text-secondary);
+}
+
+/* Text color overrides for dark mode */
+[data-theme="dark"] .text-dark {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .card-text {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .author-name {
+    color: var(--text-primary) !important;
+}
+
+/* Category and tag links in posts */
+[data-theme="dark"] .post-categories a,
+[data-theme="dark"] .post-tags a,
+[data-theme="dark"] .smoothscroll {
+    color: var(--link-color) !important;
+}
+
+[data-theme="dark"] .post-categories a:hover,
+[data-theme="dark"] .post-tags a:hover,
+[data-theme="dark"] .smoothscroll:hover {
+    color: var(--link-hover) !important;
+}
+
+/* Post metadata styling */
+[data-theme="dark"] .post-meta {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .post-meta a {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] .post-meta a:hover {
+    color: var(--link-hover);
+}
+
+/* Post content area styling */
+[data-theme="dark"] .article-post {
+    background-color: var(--bg-primary);
+}
+
+/* Section titles and headings */
+[data-theme="dark"] .section-title span {
+    color: var(--text-primary);
+    border-bottom-color: white;
+}
+
+[data-theme="dark"] .section-title h2 {
+    color: var(--text-primary);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .section-title h2::after {
+    border-bottom-color: var(--link-color);
+}
+
+[data-theme="dark"] .section-title {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-title h1,
+[data-theme="dark"] .section-title h3,
+[data-theme="dark"] .section-title h4,
+[data-theme="dark"] .section-title h5,
+[data-theme="dark"] .section-title h6 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .article-post .container {
+    background-color: var(--bg-primary);
+}
+
+/* Ensure all links in posts are visible */
+[data-theme="dark"] .article-post a:not(.btn):not(.smoothscroll) {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .article-post a:not(.btn):not(.smoothscroll):hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+/* Post footer styling */
+[data-theme="dark"] .article-post .post-footer {
+    border-top-color: var(--border-color);
+}
+
+/* Sticky elements and share buttons */
+[data-theme="dark"] .sticky-top {
+    background-color: var(--navbar-bg);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .sticky-top-offset {
+    background-color: var(--navbar-bg);
+}
+
+[data-theme="dark"] .share {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .share h4,
+[data-theme="dark"] .share h5,
+[data-theme="dark"] .share h6 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .share p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .share a {
+    color: var(--link-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .share a:hover {
+    color: var(--bg-primary);
+
+}
+
+/* Social media share buttons */
+[data-theme="dark"] .share .btn {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .share .btn:hover {
+    color: var(--bg-primary);
+}
+
+[data-theme="dark"] .card-footer.bg-white{
+    background-color: var(--bg-primary) !important;
+}
+
+/* Comments section dark mode */
+[data-theme="dark"] #comments {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] #comments .container {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] #comments .row {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] #comments .col-md-8 {
+    background-color: var(--bg-primary);
+}
+
+/* Disqus iframe dark mode */
+[data-theme="dark"] #comments iframe {
+    background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .author-name {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .author-name a {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-light {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-white {
+    color: var(--text-primary) !important;
+}
+
+
+[data-theme="dark"] .post-top-meta .link-dark {
+    color: var(--text-primary) !important;
+}
+
+/* SVG Icons dark mode */
+[data-theme="dark"] .svgIcon-use {
+    fill: var(--text-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .svgIcon-use:hover {
+    fill: var(--link-color);
+    color: var(--link-color);
+}
+
+[data-theme="dark"] svg {
+    fill: var(--text-primary);
+}
+
+[data-theme="dark"] svg:hover {
+    fill: var(--link-color);
+}
+
+[data-theme="dark"] .post-top-meta .link-dark:hover {
+    color: var(--link-color) !important;
+}
+
+/* Site title and description dark mode */
+[data-theme="dark"] .sitetitle {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .lead {
+    color: var(--text-secondary);
+}
+
+/* Jumbotron dark mode */
+[data-theme="dark"] .jumbotron {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .jumbotron a {
+    color: var(--link-color);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .jumbotron a:hover {
+    background-color: var(--link-color);
+    color: var(--bg-primary);
+}
+
+/* Footer dark mode */
+[data-theme="dark"] .footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Navigation dark mode improvements */
+[data-theme="dark"] .navbar-brand img {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] .navbar-light .navbar-toggler {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Icon and symbol styling for dark mode */
+[data-theme="dark"] .fas,
+[data-theme="dark"] .far,
+[data-theme="dark"] .fab {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] #darkModeToggle .fas {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] #darkModeToggle:hover .fas {
+    color: var(--text-primary);
+}
+
+/* Search box styling */
+[data-theme="dark"] .search-form input[type="text"] {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .search-form input[type="text"]:focus {
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+[data-theme="dark"] .search-form button {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .search-form button:hover {
+    background-color: var(--link-hover);
+    border-color: var(--link-hover);
+}
