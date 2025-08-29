@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Metateic Blog</title>
-    <description>Exploring technology, innovation, and the future of computing.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Aug 2025 10:49:56 -0400</pubDate>
-    <lastBuildDate>Fri, 29 Aug 2025 10:49:56 -0400</lastBuildDate>
+    <title>Mediumish</title>
+    <description>Jekyll template, Medium styled, free for bloggers.</description>
+    <link>/mediumish-theme-jekyll/</link>
+    <atom:link href="/mediumish-theme-jekyll/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 29 Aug 2025 10:57:07 -0400</pubDate>
+    <lastBuildDate>Fri, 29 Aug 2025 10:57:07 -0400</lastBuildDate>
     <generator>Jekyll v3.9.5</generator>
     
       <item>
@@ -208,8 +208,8 @@
 &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; #AI #MachineLearning #Trends #2024 #Technology #Innovation #Future&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 Jan 2024 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/posts/2024/01/20/ai-trends-2024/</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/2024/01/20/ai-trends-2024/</guid>
+        <link>/mediumish-theme-jekyll/ai-trends-2024/</link>
+        <guid isPermaLink="true">/mediumish-theme-jekyll/ai-trends-2024/</guid>
         
         <category>ai</category>
         
@@ -314,8 +314,8 @@
 &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; #Welcome #Technology #Innovation #Future #Metateic&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Jan 2024 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/posts/2024/01/15/welcome-to-metateic/</link>
-        <guid isPermaLink="true">http://localhost:4000/posts/2024/01/15/welcome-to-metateic/</guid>
+        <link>/mediumish-theme-jekyll/welcome-to-metateic/</link>
+        <guid isPermaLink="true">/mediumish-theme-jekyll/welcome-to-metateic/</guid>
         
         <category>welcome</category>
         
