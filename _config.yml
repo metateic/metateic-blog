@@ -1,10 +1,11 @@
 # Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll template, Medium styled, free for bloggers."
+name: "Metateic"
+title: "Metateic Blog"
+description: "Exploring technology, innovation, and the future of computing."
+baseurl: ""
+url: "https://blog.metateic.ca"
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
-baseurl: /mediumish-theme-jekyll
+favicon: 'assets/images/favicon.ico'
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
@@ -69,4 +70,5 @@ adsense-data-ad-slot: "1363087678"
 # Lazy Images ("enabled" or "disabled")
 lazyimages: "disabled"
 
+# Exclude vendor directory and other files
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor/]
