@@ -16,13 +16,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Welcome to the Metateic blog! We’re excited to share our journey exploring cutting-edge technology and innovation with you." />
 <meta property="og:description" content="Welcome to the Metateic blog! We’re excited to share our journey exploring cutting-edge technology and innovation with you." />
-<link rel="canonical" href="http://localhost:4002/welcome-to-metateic/" />
-<meta property="og:url" content="http://localhost:4002/welcome-to-metateic/" />
+<link rel="canonical" href="http://localhost:4001/welcome-to-metateic/" />
+<meta property="og:url" content="http://localhost:4001/welcome-to-metateic/" />
 <meta property="og:site_name" content="Metateic Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-01-15T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Metateic"},"url":"http://localhost:4002/welcome-to-metateic/","headline":"Welcome to Metateic - Exploring the Future of Technology","dateModified":"2024-01-15T00:00:00-05:00","datePublished":"2024-01-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4002/welcome-to-metateic/"},"description":"Welcome to the Metateic blog! We’re excited to share our journey exploring cutting-edge technology and innovation with you.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4002/assets/images/logo.png"},"name":"Metateic"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Metateic"},"url":"http://localhost:4001/welcome-to-metateic/","headline":"Welcome to Metateic - Exploring the Future of Technology","dateModified":"2024-01-15T00:00:00-05:00","datePublished":"2024-01-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4001/welcome-to-metateic/"},"description":"Welcome to the Metateic blog! We’re excited to share our journey exploring cutting-edge technology and innovation with you.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4001/assets/images/logo.png"},"name":"Metateic"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -76,45 +76,360 @@
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-                </li>
+                <a class="nav-link" href="https://metateic.com">About</a>
+                </li>       
 
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
-                </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
-                </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
-                </li>
-
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
-                </li>
-
-                <script src="/assets/js/lunr.js"></script>
-
-
+                <!-- Modern Search Interface -->
 <style>
-    .lunrsearchresult .title {color: #d9230f;}
-    .lunrsearchresult .url {color: silver;}
-    .lunrsearchresult a {display: block; color: #777;}
-    .lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
-    .lunrsearchresult a:hover .title {text-decoration: underline;}
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-results.show {
+    display: block;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Use the original lunr search styling */
+.lunrsearchresult .title {color: #d9230f;}
+.lunrsearchresult .url {color: silver;}
+.lunrsearchresult a {display: block; color: #777;}
+.lunrsearchresult a:hover, .lunrsearchresult a:focus {text-decoration: none;}
+.lunrsearchresult a:hover .title {text-decoration: underline;}
+
+.search-result-item {
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: rgba(0, 171, 107, 0.05);
+}
+
+.search-result-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.3;
+    font-family: inherit;
+    margin: 0;
+}
+
+.no-results {
+    padding: 40px 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.no-results-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.no-results p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.no-results small {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-loading {
+    padding: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #00ab6b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+}
+
+.search-overlay.show {
+    display: block;
+}
+
+/* Highlight styling to match theme */
+.search-result-title mark,
+.search-result-excerpt mark {
+    background: rgba(0, 171, 107, 0.2);
+    color: inherit;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: inherit;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .search-results {
+        position: fixed;
+        top: 50%;
+        left: 15px;
+        right: 15px;
+        transform: translateY(-50%);
+        max-height: 70vh;
+    }
+    
+    .search-input {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
 </style>
 
-
-<form class="bd-search" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
-</form>
-
-<div id="lunrsearchresults">
-    <ul></ul>
+<div class="search-container">
+    <form class="search-form" onSubmit="return performSearch(event)">
+        <input 
+            type="text" 
+            class="form-control text-small launch-modal-search" 
+            id="searchInput" 
+            name="q" 
+            maxlength="255" 
+            placeholder="Search..."
+            autocomplete="off"
+        />
+    </form>
+    
+    <div class="search-results" id="searchResults">
+        <div class="search-loading" id="searchLoading" style="display: none;">
+            <div class="spinner"></div>
+            Searching...
+        </div>
+        <div class="no-results" id="noResults" style="display: none;">
+            <div class="no-results-icon">🔍</div>
+            <p>No results found</p>
+            <small>Try different keywords or check your spelling</small>
+        </div>
+        <div id="searchResultsList"></div>
+    </div>
 </div>
 
+<div class="search-overlay" id="searchOverlay"></div>
+
+<!-- Load lunr.js first -->
+<script src="/assets/js/lunr.js"></script>
+
+<script>
+// Check if search is already initialized to prevent duplicates
+if (typeof window.searchInitialized === 'undefined') {
+    window.searchInitialized = true;
+    
+    let searchTimeout;
+    let searchIndex;
+    let searchDocuments;
+
+    // Initialize search when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait for search engine to be ready
+        if (typeof window.searchIndex !== 'undefined') {
+            searchIndex = window.searchIndex;
+            searchDocuments = window.searchDocuments;
+            initializeSearch();
+        } else {
+            // Poll for search engine readiness
+            const checkReady = setInterval(() => {
+                if (typeof window.searchIndex !== 'undefined') {
+                    searchIndex = window.searchIndex;
+                    searchDocuments = window.searchDocuments;
+                    initializeSearch();
+                    clearInterval(checkReady);
+                }
+            }, 100);
+        }
+    });
+
+    function initializeSearch() {
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        
+        if (!searchInput || !searchResults) return;
+        
+        // Show search results on input focus
+        searchInput.addEventListener('focus', function() {
+            if (this.value.trim()) {
+                showSearchResults();
+            }
+        });
+        
+        // Handle input changes
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const query = this.value.trim();
+            
+            if (query.length < 2) {
+                hideSearchResults();
+                return;
+            }
+            
+            // Debounce search
+            searchTimeout = setTimeout(() => {
+                performSearch(query);
+            }, 300);
+        });
+        
+        // Hide results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchResults.contains(e.target) && e.target !== searchInput) {
+                hideSearchResults();
+            }
+        });
+        
+        // Handle escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hideSearchResults();
+                searchInput.blur();
+            }
+        });
+    }
+
+    function performSearch(query) {
+        if (!query || query.length < 2 || !searchIndex) return false;
+        
+        showSearchResults();
+        showLoading();
+        
+        // Simulate search delay for better UX
+        setTimeout(() => {
+            try {
+                const results = searchIndex.search(query);
+                displayResults(results, query);
+            } catch (error) {
+                console.error('Search error:', error);
+                hideLoading();
+                document.getElementById('noResults').style.display = 'block';
+            }
+        }, 200);
+        
+        return false;
+    }
+
+    function displayResults(results, query) {
+        const resultsList = document.getElementById('searchResultsList');
+        const noResults = document.getElementById('noResults');
+        
+        hideLoading();
+        
+        if (!results || results.length === 0) {
+            noResults.style.display = 'block';
+            resultsList.innerHTML = '';
+            return;
+        }
+        
+        noResults.style.display = 'none';
+        
+        let html = '';
+        results.slice(0, 10).forEach(result => {
+            const doc = searchDocuments[result.ref];
+            if (!doc) return;
+            
+            const title = highlightQuery(doc.title || 'Untitled', query);
+            
+            html += `
+                <div class="search-result-item" onclick="window.location.href='${doc.url}'">
+                    <div class="search-result-title">${title}</div>
+                </div>
+            `;
+        });
+        
+        resultsList.innerHTML = html;
+    }
+
+    function highlightQuery(text, query) {
+        if (!query || !text) return text || '';
+        const regex = new RegExp(`(${query})`, 'gi');
+        return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function showSearchResults() {
+        const results = document.getElementById('searchResults');
+        const overlay = document.getElementById('searchOverlay');
+        if (results) results.classList.add('show');
+        if (overlay) overlay.classList.add('show');
+    }
+
+    function hideSearchResults() {
+        const results = document.getElementById('searchResults');
+        const overlay = document.getElementById('searchOverlay');
+        if (results) results.classList.remove('show');
+        if (overlay) overlay.classList.remove('show');
+    }
+
+    function showLoading() {
+        const loading = document.getElementById('searchLoading');
+        const noResults = document.getElementById('noResults');
+        const resultsList = document.getElementById('searchResultsList');
+        if (loading) loading.style.display = 'block';
+        if (noResults) noResults.style.display = 'none';
+        if (resultsList) resultsList.innerHTML = '';
+    }
+
+    function hideLoading() {
+        const loading = document.getElementById('searchLoading');
+        if (loading) loading.style.display = 'none';
+    }
+}
+</script>
+
+<!-- Include the search engine -->
 <script src="/assets/js/lunrsearchengine.js"></script>
 
             </ul>
@@ -157,19 +472,19 @@
     </p>
     <ul>
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text=Welcome to Metateic - Exploring the Future of Technology&url=http://localhost:4002/welcome-to-metateic/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Welcome to Metateic - Exploring the Future of Technology&url=http://localhost:4001/welcome-to-metateic/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fab fa-twitter"></i>
             </a>
         </li>
 
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4002/welcome-to-metateic/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4001/welcome-to-metateic/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </li>
 
         <li class="ml-1 mr-1">
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4002/welcome-to-metateic/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4001/welcome-to-metateic/" onclick="window.open(this.href, 'width=550,height=435');return false;">
                 <i class="fab fa-linkedin-in"></i>
             </a>
         </li>
@@ -419,21 +734,6 @@ https://search.google.com/structured-data/testing-tool/u/0/
 
 </div>
 
-
-<!-- Bottom Alert Bar
-================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<span><img src="/assets/images/logo.png" alt="Metateic Blog"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <form action="https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
-            <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
-            </div>
-        </form>
-	</div>
-</div>
-
     
 </div>
 
@@ -441,11 +741,7 @@ https://search.google.com/structured-data/testing-tool/u/0/
 ================================================== -->
 <div class="jumbotron fortags">
 	<div class="d-md-flex h-100">
-		<div class="col-md-4 transpdark align-self-center text-center h-100">
-            <div class="d-md-flex align-items-center justify-content-center h-100">
-                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
-            </div>
-		</div>
+
 		<div class="col-md-8 p-5 align-self-center text-center">
             
             
@@ -469,9 +765,6 @@ https://search.google.com/structured-data/testing-tool/u/0/
         <div class="row">
             <div class="col-md-6 col-sm-6 text-center text-lg-left">
                 Copyright © 2025 Metateic 
-            </div>
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">    
-                <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish Jekyll Theme</a> by WowThemes.net
             </div>
         </div>
     </div>
