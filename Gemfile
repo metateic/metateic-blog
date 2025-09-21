@@ -14,8 +14,14 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap'
     gem 'jekyll-paginate'
     gem 'jekyll-seo-tag'
-    gem 'jekyll-archives'
+    # gem 'jekyll-archives'  # Temporarily disabled due to eventmachine compatibility issues
     gem 'kramdown'
     gem 'kramdown-parser-gfm'
     gem 'rouge'
 end
+
+# Use newer Jekyll version for better macOS compatibility
+gem 'jekyll', '~> 4.0'
+
+# Force newer eventmachine version for macOS compatibility
+gem 'eventmachine', '~> 1.3.0'
