@@ -1,1 +1,0 @@
-Sitemap: http://localhost:4007/sitemap.xml
