@@ -1,8 +1,8 @@
 export const site = {
   name: "Metateic",
   title: "Metateic Blog",
-  heading: "Notes from the practice.",
-  description: "We write about the standards, security, and technology questions that show up in the work.",
+  heading: "Insights",
+  description: "Writing on IT standards, security and AI from the Metateic team.",
   url: "https://blog.metateic.ca",
   mainSite: "https://metateic.com",
   legalName: "Metateic Inc.",
