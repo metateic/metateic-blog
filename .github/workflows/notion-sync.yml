@@ -18,7 +18,8 @@ jobs:
           FILTER_VALUES: "Ready"
           CONVERT_PROP_CASE: "snake"
           ARTICLE_PATH: "_posts/{slug}.md"
-          ASSETS_PATH: "media"
+          # Next.js serves static files from public/, so images land at /media/… on the site.
+          ASSETS_PATH: "public/media"
           SKIP_DOWNLOADED_IMAGES: true
           DOWNLOAD_FRONTMATTER_IMAGES: true
 

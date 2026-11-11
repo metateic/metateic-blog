@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@fontsource-variable/montserrat";
+@import "@metateic/ui/themes/metateic.css";
+@import "@metateic/ui/themes/base.css";
+@source "../node_modules/@metateic/ui/src";
